@@ -12,7 +12,6 @@ app.use(cors());
 app.use(express.json());
 
 
-
 // Routes pour les plans de repas
 app.use('/api/meal-plans', mealPlanRoutes);
 

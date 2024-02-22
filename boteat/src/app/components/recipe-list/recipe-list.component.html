@@ -1,18 +1,21 @@
-<p>tooootoooo!</p>
-<div *ngIf="recipes.length > 0; else noRecipes">
-  <h2>Liste des recettes</h2>
-sdqd
-  <ul>
-    <li *ngFor="let recipe of recipes">
-      <h3>{{ recipe.name }}</h3>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des recettes</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-      <p>{{ recipe.instructions }}</p>
+<ion-content>
+  <ion-list *ngIf="recipes.length > 0; else noRecipes">
+    <ion-item *ngFor="let recipe of recipes">
+      <ion-label>
+        <h2>{{ recipe.name }}</h2>
+        <p>{{ recipe.instructions }}</p>
+        <!-- Ajoutez d'autres propriétés de recette à afficher -->
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
-      *<!-- Ajoutez d'autres propriétés de recette à afficher -->*
-    </li>
-  </ul>
-</div>
-
-<ng-template #noRecipes>
-  <p>Aucune recette n'a été trouvée.</p>
-</ng-template>
+  <ng-template #noRecipes>
+    <p>Aucune recette n'a été trouvée.</p>
+  </ng-template>
+</ion-content>
