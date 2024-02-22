@@ -1,0 +1,18 @@
+<p>tooootoooo!</p>
+<div *ngIf="recipes.length > 0; else noRecipes">
+  <h2>Liste des recettes</h2>
+sdqd
+  <ul>
+    <li *ngFor="let recipe of recipes">
+      <h3>{{ recipe.name }}</h3>
+
+      <p>{{ recipe.instructions }}</p>
+
+      *<!-- Ajoutez d'autres propriétés de recette à afficher -->*
+    </li>
+  </ul>
+</div>
+
+<ng-template #noRecipes>
+  <p>Aucune recette n'a été trouvée.</p>
+</ng-template>
