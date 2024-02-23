@@ -1,1 +1,57 @@
-<p>home works!</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter une recette</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Nom de la recette</ion-label>
+    <ion-input type="text" [(ngModel)]="recipe.name" aria-label="Nom de la recette"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Ingrédients (séparés par des virgules)</ion-label>
+    <ion-input type="text" [(ngModel)]="ingredientString" aria-label="Ingrédients"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Instructions</ion-label>
+    <ion-textarea rows="6" [(ngModel)]="recipe.instructions" aria-label="Instructions"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Temps de préparation</ion-label>
+    <ion-input type="text" [(ngModel)]="recipe.cook_time" aria-label="Temps de préparation"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Difficulté</ion-label>
+    <ion-input type="text" [(ngModel)]="recipe.difficulty" aria-label="Difficulté"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Type de plat</ion-label>
+    <ion-input type="text" [(ngModel)]="recipe.dish_type" aria-label="Type de plat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Catégorie alimentaire</ion-label>
+    <ion-input type="text" [(ngModel)]="recipe.food_category" aria-label="Catégorie alimentaire"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Détail diététique</ion-label>
+    <ion-input type="text" [(ngModel)]="recipe.dietary_detail" aria-label="Détail diététique"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Région d'origine</ion-label>
+    <ion-input type="text" [(ngModel)]="recipe.origin_region" aria-label="Région d'origine"></ion-input>
+  </ion-item>
+
+  <!-- Ajoutez d'autres champs ici selon les besoins -->
+
+  <ion-button expand="block" (click)="addRecipe()">Ajouter la recette</ion-button>
+  <ion-button [routerLink]="['/recipes']">Go to Home</ion-button>
+</ion-content>

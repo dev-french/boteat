@@ -1,5 +1,7 @@
 {
   "name": "boteat",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

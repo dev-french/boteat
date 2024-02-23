@@ -20,7 +20,14 @@ const recipeController = {
     },
 
     createRecipe: async (req, res) => {
-        // Logique pour créer une nouvelle recette
+        try {
+            const newRecipe = new Recipe(req.body); // Créez une nouvelle instance de recette en utilisant les données de la requête
+            const savedRecipe = await newRecipe.save(); // Enregistrez la nouvelle recette dans la base de données
+            res.status(201).json(savedRecipe); // Répondez avec la recette nouvellement créée
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: "Une erreur s'est produite lors de la création de la recette." });
+        }
     }
 };
 

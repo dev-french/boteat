@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Recipe } from 'src/app/interfaces/i-recipe';
+import { Recipe } from '../../interfaces/i-recipe';
+import { RecipesService } from '../../services/recipes.service';
 
-import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -18,7 +18,6 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.subscription = this.recipesService.getAllRecipes().subscribe({
       next: (data: Recipe[]) => {
-        console.log('Recettes récupérées :', data);
         this.recipes = data;
       },
       error: (error) => {
@@ -27,7 +26,6 @@ export class RecipeListComponent implements OnInit, OnDestroy {
     });
   }
 
-  // Implémentez la méthode ngOnDestroy pour désinscrire l'abonnement
   public ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
